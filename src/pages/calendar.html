@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar</title>
+  <link rel="shortcut icon" href="icons/home.svg" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="app.js" defer></script>
+</head>
+
+<body>
+  <nav id="sidebar">
+    <ul>
+      <li>
+        <span class="logo">codign2go</span>
+        <button onclick=toggleSidebar() id="toggle-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevrons-left">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M11 7l-5 5l5 5" />
+            <path d="M17 7l-5 5l5 5" />
+          </svg>
+        </button>
+      </li>
+      <li class="">
+        <a href="../index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-home">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+          </svg>
+          <span>Home</span></a>
+      </li>
+      <li class="">
+        <a href="dashboard.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-layout-dashboard">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M5 4h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" />
+            <path d="M5 16h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" />
+            <path d="M15 12h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" />
+            <path d="M15 4h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" />
+          </svg>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-folder-plus">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 19h-7a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v3.5" />
+            <path d="M16 19h6" />
+            <path d="M19 16v6" />
+          </svg>
+          <span>Create</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 9l6 6l6 -6" />
+          </svg>
+        </button>
+        <ul class="sub-menu">
+          <div>
+            <li><a href="#">Folder</a></li>
+            <li><a href="#">Document</a></li>
+            <li><a href="#">Project</a></li>
+          </div>
+        </ul>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-list-check">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3.5 5.5l1.5 1.5l2.5 -2.5" />
+            <path d="M3.5 11.5l1.5 1.5l2.5 -2.5" />
+            <path d="M3.5 17.5l1.5 1.5l2.5 -2.5" />
+            <path d="M11 6l9 0" />
+            <path d="M11 12l9 0" />
+            <path d="M11 18l9 0" />
+          </svg>
+          <span>Todo-Lists</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 9l6 6l6 -6" />
+          </svg>
+        </button>
+        <ul class="sub-menu">
+          <div>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Private</a></li>
+            <li><a href="#">Coding</a></li>
+            <li><a href="#">Gardening</a></li>
+            <li><a href="#">School</a></li>
+          </div>
+        </ul>
+      </li>
+      <li class="active">
+        <a href="calendar.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-month">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+            <path d="M16 3v4" />
+            <path d="M8 3v4" />
+            <path d="M4 11h16" />
+            <path d="M7 14h.013" />
+            <path d="M10.01 14h.005" />
+            <path d="M13.01 14h.005" />
+            <path d="M16.015 14h.005" />
+            <path d="M13.015 17h.005" />
+            <path d="M7.01 17h.005" />
+            <path d="M10.01 17h.005" />
+          </svg>
+          <span>Calendar</span></a>
+      </li>
+      <li class="">
+        <a href="profile.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-user">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+          </svg>
+          <span>Profile</span></a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <div class="container">
+      <h2>Calendar</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+        earum adipisci labore totam accusantium placeat eius eveniet explicabo
+        cum officia assumenda ad rem error blanditiis illum, accusamus quia
+        aut inventore!
+      </p>
+    </div>
+    <div class="container">
+      <h2>Example Heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate enim at, nam assumenda sunt iste
+        natus veniam hic, minus facilis culpa, autem harum facere. Molestias dolore error consequuntur voluptas?
+        Fugit reiciendis molestiae est commodi delectus iste, doloribus architecto vitae pariatur porro doloremque
+        inventore eligendi nesciunt. Voluptatibus nemo doloribus possimus neque. Inventore incidunt sed ipsam nesciunt,
+        laudantium praesentium corrupti atque!
+        Ipsum, temporibus? Enim dolore omnis, sit corporis similique ea illo possimus distinctio illum? Quos non odio
+        officiis fugiat quis cupiditate saepe harum pariatur quaerat quae ea, ipsum iure dicta dolores!
+        Amet magnam fugit facilis non vel vero itaque quis iste ipsum, totam architecto esse consequatur maxime
+        reprehenderit harum praesentium in ad enim, reiciendis dignissimos atque! Illum ab corrupti omnis maiores!
+        Autem blanditiis nihil vel placeat dolores, quod cumque dignissimos libero necessitatibus iusto aspernatur iste
+        commodi error inventore dolorem provident voluptatem tempore voluptatum eligendi excepturi temporibus voluptates
+        eaque harum incidunt. Quibusdam.
+      </p>
+    </div>
+    <div class="container">
+      <h2>Example Heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+        earum adipisci labore totam accusantium placeat eius eveniet explicabo
+        cum officia assumenda ad rem error blanditiis illum, accusamus quia
+        aut inventore!
+      </p>
+    </div>
+  </main>
+</body>
+
+</html>
